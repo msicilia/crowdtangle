@@ -28,21 +28,21 @@ Quick start
 
 First create a `Client` instance, with a token from a CrowdTangle Dashboard. 
 
-```
-import crowdtangle as ct
-with open("sample_keys.json", "r") as file:
-        creds = json.load(file)
-        client = ct.Client(creds['CROWDTANGLE_DASHBOARD_KEY'])
-```
+.. code-block:: python
+        import crowdtangle as ct
+        with open("sample_keys.json", "r") as file:
+                creds = json.load(file)
+                client = ct.Client(creds['CROWDTANGLE_DASHBOARD_KEY'])
+
 
 Then use the methods available for each of the endpoints of the API.
 
-```
- lsts = client.lists(types=['LIST'])
-    for lst in lsts:
-        for a in client.accounts(lst):
-            print(a.name)
-```
+.. code-block:: python
+        lsts = client.lists(types=['LIST'])
+        for lst in lsts:
+                for a in client.accounts(lst):
+                        print(a.name)
+
 
 The reference documentation for endpoints, parameters and limitations can be found here:
 https://github.com/CrowdTangle/API
