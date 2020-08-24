@@ -16,17 +16,35 @@ crowdtangle
 
 
 
-A Facebook CrowdTangle SDK for Python
+A Facebook CrowdTangle SDK for Python. Under development at this moment, not to be used in production. 
 
 
 * Free software: MIT license
 * Documentation: https://crowdtangle.readthedocs.io.
 
 
-Features
+Quick start
 --------
 
-* TODO
+First create a client instance, with a token from a CrowdTangle Dashboard. 
+
+```python
+ with open("sample_keys.json", "r") as file:
+        creds = json.load(file)
+        client = ct.Client(creds['CROWDTANGLE_DASHBOARD_KEY'])
+```
+
+Then use the methods available for each of the endpoints of the API.
+
+```python
+ lsts = client.lists(types=['LIST'])
+    for lst in lsts:
+        for a in client.accounts(lst):
+            print(a.name)
+```
+
+The reference documentation for endpoints, parameters and limitations can be found here:
+https://github.com/CrowdTangle/API
 
 Credits
 -------
