@@ -29,6 +29,7 @@ Quick start
 First create a `Client` instance, with a token from a CrowdTangle Dashboard. 
 
 .. code-block:: python
+
         import crowdtangle as ct
         with open("sample_keys.json", "r") as file:
                 creds = json.load(file)
@@ -38,6 +39,7 @@ First create a `Client` instance, with a token from a CrowdTangle Dashboard.
 Then use the methods available for each of the endpoints of the API.
 
 .. code-block:: python
+
         lsts = client.lists(types=['LIST'])
         for lst in lsts:
                 for a in client.accounts(lst):
