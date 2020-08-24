@@ -26,17 +26,18 @@ A Facebook CrowdTangle SDK for Python. Under development at this moment, not to 
 Quick start
 --------
 
-First create a client instance, with a token from a CrowdTangle Dashboard. 
+First create a `Client` instance, with a token from a CrowdTangle Dashboard. 
 
-```python
- with open("sample_keys.json", "r") as file:
+```
+import crowdtangle as ct
+with open("sample_keys.json", "r") as file:
         creds = json.load(file)
         client = ct.Client(creds['CROWDTANGLE_DASHBOARD_KEY'])
 ```
 
 Then use the methods available for each of the endpoints of the API.
 
-```python
+```
  lsts = client.lists(types=['LIST'])
     for lst in lsts:
         for a in client.accounts(lst):
